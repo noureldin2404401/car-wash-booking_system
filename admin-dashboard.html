@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Express Car Wash</title>
+    <!-- Link to External Admin Dashboard CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin-dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">🚘 WashAdmin</div>
+        <nav class="sidebar-nav">
+          <a href="admin-dashboard.html" class="nav-item active"
+            >📊 Dashboard</a
+          >
+          <a href="manage-services.html" class="nav-item">🛠️ Services</a>
+          <a href="index.html" class="nav-item">🌐 Customer Site</a>
+        </nav>
+        <div class="sidebar-footer">
+          <small>Logged in as: Admin</small>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="dashboard-content">
+        <header class="content-header">
+          <h1>Bookings Management</h1>
+          <p>View, search, and filter customer car wash appointments.</p>
+        </header>
+
+        <!-- Search & Filter Bar -->
+        <section class="filter-card">
+          <div class="filter-group">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="🔍 Search by Customer Name or Phone..."
+              aria-label="Search Bookings"
+            />
+            <select id="statusFilter" aria-label="Filter by Status">
+              <option value="ALL">All Statuses</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="stats-counter">
+            Showing <span id="recordCount">0</span> bookings
+          </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="table-card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Vehicle</th>
+                <th>Package</th>
+                <th>Date & Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="bookingsTableBody">
+              <!-- Table rows populated dynamically by js/admin-dashboard.js -->
+            </tbody>
+          </table>
+          <div id="noResultsMsg" class="no-results hidden">
+            No bookings match your search parameters.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+  </body>
+</html>
