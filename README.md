@@ -1,0 +1,1 @@
+The Car Wash Booking System is a web where customers can book a car wash appointment. Customers can choose a wash service, select a date and time, and confirm their booking. The admin can view and manage all bookings and available services.
